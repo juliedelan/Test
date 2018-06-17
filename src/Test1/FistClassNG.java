@@ -34,13 +34,14 @@ public class FistClassNG {
 	String errortext1=errortext+"\n";
 	System.out.println(errortext1);
 	Assert.assertEquals(errortext, "Please check your username and password. If you still can't log in, contact your Salesforce administrator.");
-	//driverChrome.close();
+	//driverChrome.close(); 
+	System.out.println("hello");
 	} // end login  method
 
 
 
 @AfterTest
-public void closeBrowser(){
+public void closeBrowser() {
 	driverChrome.close();
 }//end closeBrowser method
 
