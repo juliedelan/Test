@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+  <parameter name="username" value="testuser"/> <!-- this will be used by all methods in all classes (FirstClassNG,Salestests,thirdClass -->
+  <parameter name="password" value="testpassword"/>
+     
+      <classes>
+      <class name="Test1.Salestets">
+       <methods>
+       <include name="testLogin" >   @test method in salestests class
+      <parameter name="username" value="testusernew"/> this will be used by Salestests class only
+	  <parameter name="password" value="testpasswordnew"/>
+	  </include>
+	  </methods> <!--  end method for salestests classs -->
+       </class>
+       
+      <class name="Test1.FistClassNG"/> 
+      
+      <class name="Test1.thirdClass"> 
+      <methods>
+        <include name="findAllLinks" />
+        <include name="findFooterLinks" />
+      <!--  <exclude name="findFooterLinks" />   -->
+      </methods>
+       </class> <!-- end class for thirdClass -->
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
